@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+
+  h1= title
+
+  form(action='/cars/new' method='post')
+    label(for='make') Make:
+    input(type='text' id='make' name='carmake')
+    label(for='model') Model:
+    input(type='text' id='model' name='carmodel')
+    label(for='year') Year:
+    input(type='number' id='year' name='caryear' min='1921' max='2016')
+    p
+    input(type='submit' value='Enter Car')
+

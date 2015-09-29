@@ -4,4 +4,18 @@ block content
 
   h1= title
 
+  table
+    thead
+      tr
+        th Make
+        th Model
+        th Year
+    tbody
+      for car in allCars
+        tr
+          th
+            a(href='cars/' + car._id)= car.make
+          th= car.model
+          th= car.year
+
   a(href='/cars/new') Add a New Car
