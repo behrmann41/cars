@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+
+  h1= theDriver.firstname + " " + theDriver.lastname
+
+  a(href='/drivers/edit')
+  br
+  a(href='/drivers') List of Drivers

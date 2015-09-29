@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+
+  h1= title
+
+  table
+    thead
+      tr
+        th First Name
+        th Last Name
+        th Age
+        th City
+        th State
+    tbody
+      for driver in allDrivers
+        tr
+          th
+            a(href='drivers/' + driver._id)= driver.firstname
+          th= driver.lastname
+          th= driver.age
+          th= driver.city
+          th= driver.state
+
+  a(href='drivers/new') Add a Driver
+  br
+  a(href='/') Homepage

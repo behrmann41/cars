@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+
+  h1= title
+
+  form(action='/drivers/new' method='post')
+    label(for='firstname') First Name:
+    input(type='text' id='firstname' name='firstname')
+    label(for='lastname') Last Name:
+    input(type='text' id='lastname' name='lastname')
+    label(for='age') Age:
+    input(type='number' id='age' min='16' name='driverage')
+    label(for='city') City:
+    input(type='text' id='city' name='city')
+    label(for='state') State:
+    input(type='text' id='state' name='state')
+    input(type='submit' value='Enter Driver')
