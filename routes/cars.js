@@ -29,4 +29,25 @@ router.get('/:id', function (req, res, next){
   })
 })
 
+router.get('/:id/edit', function (req, res, next) {
+  Cars.findOne({_id: req.params.id}, function (err, data){
+    res.render('cars/edit', { theCar: data });
+  })
+})
+
+router.post('/:id/edit', function (req, res, next) {
+  Cars.updateById(req.params.id, {  make: req.body.carmake,
+                                    model: req.body.carmodel,
+                                    year: req.body.caryear
+                                  }, function (err, data) {
+    res.redirect('/cars/' + req.params.id)
+  })
+})
+
+router.post('/:id/delete', function (req, res, next) {
+  Cars.remove({_id: req.params.id}, function (err, data) {
+    res.redirect('/cars')
+  })
+})
+
 module.exports = router;

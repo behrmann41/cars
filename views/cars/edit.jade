@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+
+  h1 Edit Car
+
+  form(action='/cars/' + theCar._id + '/edit' method='post')
+    label(for='make') Make:
+    input(type='text' id='make' name='carmake' value=theCar.make)
+    label(for='model') Model:
+    input(type='text' id='model' name='carmodel' value=theCar.model)
+    label(for='year') Year:
+    input(type='number' id='year' name='caryear' min='1921' max='2016' value=theCar.year)
+    p
+    input(type='submit' value='Update Car')
+
+  form(action='/cars/' + theCar._id + '/delete' method='post')
+    label(for='delete')
+    input(type='submit' id='delete' value='Delete Car')
+
+  a(href='/cars') Cancel

@@ -3,4 +3,9 @@ extends ../layout
 block content
 
   h1= theCar.make
-  
+  p= theCar.model
+  p= theCar.year
+  p
+  a(href='/cars/' + theCar._id + '/edit') Edit Car
+  br
+  a(href='/cars') List of Cars
