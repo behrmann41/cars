@@ -38,4 +38,21 @@ router.get('/:id/edit', function (req, res, next) {
   })
 })
 
+router.post('/:id/edit', function (req, res, next){
+  Drivers.updateById(req.params.id, { firstname: req.body.firstname,
+                                      lastname: req.body.lastname,
+                                      age: req.body.driverage,
+                                      city: req.body.city,
+                                      state: req.body.state
+                                    }, function (err, data){
+    res.redirect('/drivers/' + req.params.id);
+  })
+})
+
+router.post('/:id/delete', function (req, res, next){
+  Drivers.remove({_id: req.params.id}, function (err, data){
+    res.redirect('/drivers')
+  })
+})
+
 module.exports = router;

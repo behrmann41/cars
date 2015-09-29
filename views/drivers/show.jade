@@ -4,6 +4,6 @@ block content
 
   h1= theDriver.firstname + " " + theDriver.lastname
 
-  a(href='/drivers/edit')
+  a(href='/drivers/' + theDriver._id + '/edit') Edit Driver
   br
   a(href='/drivers') List of Drivers
